@@ -62,7 +62,7 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="getStartedButtonPushed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="HWZ-Yf-YaW"/>
+                                    <segue destination="ng8-lk-jbx" kind="show" id="pfj-yi-9fI"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Find a team in your city &amp; dominate the league" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0fw-gW-UT8">
@@ -130,9 +130,6 @@
                                         <state key="normal" title="Men's">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
-                                        <connections>
-                                            <action selector="getStartedButtonPushed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="BXk-47-yQ5"/>
-                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GcN-X4-4A7" customClass="BorderButton" customModule="Swoosh" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="80" width="335" height="62"/>
@@ -144,9 +141,6 @@
                                         <state key="normal" title="Women's">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
-                                        <connections>
-                                            <action selector="getStartedButtonPushed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="H4Z-Zf-L6N"/>
-                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qRD-kc-TqY" customClass="BorderButton" customModule="Swoosh" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="160" width="335" height="62"/>
@@ -158,9 +152,6 @@
                                         <state key="normal" title="Co-ed">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
-                                        <connections>
-                                            <action selector="getStartedButtonPushed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="wx9-Te-BQk"/>
-                                        </connections>
                                     </button>
                                 </subviews>
                             </stackView>
@@ -177,9 +168,6 @@
                                         <state key="normal" title="NEXT">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
-                                        <connections>
-                                            <action selector="getStartedButtonPushed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="0ye-UA-4in"/>
-                                        </connections>
                                     </button>
                                 </subviews>
                             </stackView>
@@ -207,11 +195,24 @@
                                     </label>
                                 </subviews>
                             </stackView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xYg-o8-fWg">
+                                <rect key="frame" x="16" y="20" width="47" height="31"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="47" id="c6b-G7-Hgr"/>
+                                    <constraint firstAttribute="height" constant="31" id="e8N-nX-Lok"/>
+                                </constraints>
+                                <state key="normal" image="backButton"/>
+                                <connections>
+                                    <segue destination="hH1-VE-zLg" kind="unwind" unwindAction="unwindFromSkillVCWithUnwindSegue:" id="Lrk-XC-8Ii"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="VBg-X4-Aea" firstAttribute="top" secondItem="iZB-QN-KCR" secondAttribute="top" constant="20" id="3hO-GS-EA9"/>
+                            <constraint firstItem="xYg-o8-fWg" firstAttribute="top" secondItem="iZB-QN-KCR" secondAttribute="top" id="6mG-r8-3xr"/>
                             <constraint firstItem="iZB-QN-KCR" firstAttribute="bottom" secondItem="1RR-I1-gTd" secondAttribute="bottom" id="7K8-ly-n1y"/>
+                            <constraint firstItem="xYg-o8-fWg" firstAttribute="leading" secondItem="iZB-QN-KCR" secondAttribute="leading" constant="16" id="AYD-Dq-QCy"/>
                             <constraint firstItem="VBg-X4-Aea" firstAttribute="leading" secondItem="iZB-QN-KCR" secondAttribute="leading" constant="20" id="AjN-S1-4LE"/>
                             <constraint firstItem="iZB-QN-KCR" firstAttribute="trailing" secondItem="VBg-X4-Aea" secondAttribute="trailing" constant="20" id="Bvw-9s-GWe"/>
                             <constraint firstItem="iZB-QN-KCR" firstAttribute="trailing" secondItem="Ua2-kz-xj4" secondAttribute="trailing" constant="20" id="EoI-D5-J1y"/>
@@ -228,8 +229,9 @@
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hwV-FA-tI3" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="hH1-VE-zLg" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="969.56521739130437" y="157.33695652173915"/>
+            <point key="canvasLocation" x="968.79999999999995" y="156.97151424287858"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="nY8-CV-RUe">
@@ -255,9 +257,6 @@
                                         <state key="normal" title="Beginner">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
-                                        <connections>
-                                            <action selector="getStartedButtonPushed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="i64-Gr-P4m"/>
-                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vnK-gO-wSx" customClass="BorderButton" customModule="Swoosh" customModuleProvider="target">
                                         <rect key="frame" x="182.5" y="0.0" width="152.5" height="62"/>
@@ -269,9 +268,6 @@
                                         <state key="normal" title="Baller">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
-                                        <connections>
-                                            <action selector="getStartedButtonPushed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="DE2-jF-9Fr"/>
-                                        </connections>
                                     </button>
                                 </subviews>
                             </stackView>
@@ -288,9 +284,6 @@
                                         <state key="normal" title="FINISH">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
-                                        <connections>
-                                            <action selector="getStartedButtonPushed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Lar-ND-Crv"/>
-                                        </connections>
                                     </button>
                                 </subviews>
                             </stackView>
@@ -344,6 +337,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="backButton" width="29" height="24"/>
         <image name="beginnerBallerBG" width="414" height="736"/>
         <image name="desiredLeagueBG" width="414" height="736"/>
         <image name="swooshLogo" width="119" height="20"/>
