@@ -8,12 +8,9 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class WelcomeVC: UIViewController {
     
     // MARK: - IBOutlets
-    @IBOutlet weak var swoosh: UIImageView!
-    @IBOutlet weak var bgImg: UIImageView!
-    @IBOutlet weak var getStartedButton: BorderButton!
     
     // MARK: - Initialization
     override func viewDidLoad() {
