@@ -13,6 +13,7 @@ class LeagueVC: UIViewController {
     // MARK: - IBOutlets
     @IBOutlet weak var nextButton: BorderButton!
     
+    // MARK: - Variables
     var player: Player!
     
     // MARK: - Initialization
@@ -20,13 +21,6 @@ class LeagueVC: UIViewController {
         super.viewDidLoad()
 
         player = Player()
-    }
-    
-    // MARK: - Functions
-    func selectLeague(leagueType: String) {
-        
-        player.desiredLeague = leagueType
-        nextButton.isEnabled = true
     }
     
     // MARK: - IBActions
@@ -50,14 +44,64 @@ class LeagueVC: UIViewController {
         performSegue(withIdentifier: "skillVCSegue", sender: self)
     }
  
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    // MARK: - Functions
+    func selectLeague(leagueType: String) {
+        
+        player.desiredLeague = leagueType
+        nextButton.isEnabled = true
     }
-    */
+    
+    // MARK: - Navigation
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
+        if let skillVC = segue.destination as? SkillVC {
+            
+            skillVC.player = player
+        }
+    }
 
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
